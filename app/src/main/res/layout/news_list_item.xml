@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="10dp"
+    android:background="@drawable/item_background"
+    android:elevation="6dp"
+    android:padding="10dp">
+
+
+    <TextView
+        android:id="@+id/title_tv"
+        style="@style/Title_tv_style"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="Capcom я вас люблю. Обзор Resident Evil 4 Remake" />
+
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/article_iv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:adjustViewBounds="true"
+        android:scaleType="fitCenter"
+        android:layout_marginTop="10dp"
+        app:cornerSize="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/title_tv"
+        app:shapeAppearanceOverlay="@style/ShapeApp"
+        tools:src="@drawable/pic37191d4765" />
+
+    <TextView
+        android:id="@+id/description_tv"
+        style="@style/Description_tv_style"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="15dp"
+        android:maxLines="5"
+        android:ellipsize="end"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/article_iv"
+        tools:text="Вот она, игра, ради которой спешишь домой. Какие там жена и дети! Уйдите в сторону и дайте мне насладиться этим шедевром. Ведь Resident Evil 4 Remake - наше всё.Читать дальше" />
+
+    <TextView
+        android:id="@+id/publish_date_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/grey_light"
+        android:textSize="11sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:text="2023-04-03" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
