@@ -40,7 +40,6 @@ class NewsAdapter(private val context: Context, private val callback: (Int) -> U
 
     override fun onBindViewHolder(holder: ArticleViewHolder, position: Int) {
         val news = getItem(position)
-        Log.d("item", news.toString())
         holder.title.text = news.title
         holder.description.text = news.description
         holder.publishDate.text = parseDate(news.publishedAt) //распарсить дату
@@ -55,13 +54,11 @@ class NewsAdapter(private val context: Context, private val callback: (Int) -> U
 
         if (itemCount - position == 1) {
             callback(itemCount / ApiService.pageSize + 1) // счет страниц не с 0
-            Log.d("paging", "$itemCount, ${itemCount/ApiService.pageSize + 1}")
         }
     }
 
 
     private fun parseDate(date: String): String {
-        Log.d("date", date.substringBefore('T'))
         val parsedDate =
             LocalDate.parse(date.substringBefore('T'), DateTimeFormatter.ofPattern("yyyy-MM-dd"))
         return "${parsedDate.dayOfMonth} ${parsedDate.month} ${parsedDate.year}"

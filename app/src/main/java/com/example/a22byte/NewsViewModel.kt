@@ -18,7 +18,6 @@ class NewsViewModel(): ViewModel() {
         viewModelScope.launch(Dispatchers.IO){
             val response = repository.getAllNews(search, page)
             newsList.postValue(response.body())
-            Log.d("test", "запросил страницу $page")
         }
     }
 }
